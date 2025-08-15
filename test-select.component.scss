@@ -1,0 +1,651 @@
+// Import styles from the existing app-select component
+@import './app-select.component.scss';
+
+// Test Select Component Styles
+.test-select-demo-page {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+
+  .demo-header {
+    margin-bottom: 40px;
+    padding: 40px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .keyboard-instructions {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+
+    ul {
+      margin: 8px 0 0 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 15px;
+
+    @media (max-width: 768px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding: 15px;
+
+    @media (max-width: 768px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 15px;
+
+    @media (max-width: 768px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  .box {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    color: black;
+
+    h1, h2, h3, h4 {
+      margin: 0 0 15px 0;
+      color: #333;
+      font-weight: 600;
+    }
+
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+    h4 { font-size: 16px; }
+
+    p {
+      margin: 0 0 20px 0;
+      color: #666;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    pre {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 4px;
+      border: 1px solid #e9ecef;
+      font-size: 12px;
+      overflow-x: auto;
+      margin: 10px 0;
+      color: black;
+    }
+
+    .mt-2 { margin-top: 0.5rem; }
+    .mt-3 { margin-top: 1rem; }
+
+    strong {
+      color: #333;
+      font-weight: 600;
+    }
+  }
+
+  .variants-container {
+    margin-bottom: 40px;
+  }
+
+  .variant-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: auto;
+
+    h3 {
+      margin: 0 0 10px 0;
+      color: #333;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0 0 15px 0;
+      color: #666;
+      font-size: 12px;
+    }
+
+    .controls {
+      background: #f8f9fa;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #e9ecef;
+
+      h4 {
+        margin: 0 0 10px 0;
+        font-size: 14px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 12px;
+        cursor: pointer;
+
+        input[type="checkbox"] {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  .demo-section {
+    margin-bottom: 40px;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    ava-button {
+      flex-shrink: 0;
+    }
+  }
+
+  .config-builder {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+
+    .form-group {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      select.form-control {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .code-preview {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 11px;
+    overflow-x: auto;
+    color: black;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+// Test Select Component Core Styles
+.test-select-wrapper {
+  position: relative;
+
+  // Large Variant - Width: 280px, Height: 364px
+  &[data-variant="large"] {
+    .test-select {
+      min-width: 280px;
+
+      ::ng-deep ava-select {
+        .select-dropdown {
+          width: 280px;
+          max-height: 364px;
+          min-width: 208px;
+          gap: 4px;
+        }
+
+        .select-trigger {
+          min-height: 48px;
+          padding: 12px 16px;
+        }
+
+        .select-label {
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        .select-placeholder {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .option-content {
+      padding: 12px 16px;
+      gap: 12px;
+
+      &--with-avatar {
+        .option-avatar {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .option-text {
+        .option-label {
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 1.4;
+        }
+
+        .option-role {
+          font-size: 13px;
+          color: #6B7280;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+
+  // Medium Variant - Width: 233px, Height: 340px
+  &[data-variant="medium"] {
+    .test-select {
+      min-width: 233px;
+
+      ::ng-deep ava-select {
+        .select-dropdown {
+          width: 233px;
+          max-height: 340px;
+          min-width: 208px;
+          gap: 4px;
+        }
+
+        .select-trigger {
+          min-height: 44px;
+          padding: 10px 14px;
+        }
+
+        .select-label {
+          font-size: 15px;
+          font-weight: 600;
+        }
+
+        .select-placeholder {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .option-content {
+      padding: 10px 14px;
+      gap: 10px;
+
+      &--with-avatar {
+        .option-avatar {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      .option-text {
+        .option-label {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1.4;
+        }
+
+        .option-role {
+          font-size: 12px;
+          color: #6B7280;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+
+  // Small Variant - Width: 233px, Height: 316px
+  &[data-variant="small"] {
+    .test-select {
+      min-width: 233px;
+
+      ::ng-deep ava-select {
+        .select-dropdown {
+          width: 233px;
+          max-height: 316px;
+          min-width: 208px;
+          gap: 4px;
+        }
+
+        .select-trigger {
+          min-height: 40px;
+          padding: 8px 12px;
+        }
+
+        .select-label {
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .select-placeholder {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .option-content {
+      padding: 8px 12px;
+      gap: 8px;
+
+      &--with-avatar {
+        .option-avatar {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      .option-text {
+        .option-label {
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 1.3;
+        }
+
+        .option-role {
+          font-size: 11px;
+          color: #6B7280;
+          margin-top: 1px;
+        }
+      }
+    }
+  }
+
+  // Extra Small Variant - Width: 233px, Height: 264px
+  &[data-variant="extra-small"] {
+    .test-select {
+      min-width: 233px;
+
+      ::ng-deep ava-select {
+        .select-dropdown {
+          width: 233px;
+          max-height: 264px;
+          min-width: 208px;
+          gap: 4px;
+        }
+
+        .select-trigger {
+          min-height: 36px;
+          padding: 6px 10px;
+        }
+
+        .select-label {
+          font-size: 13px;
+          font-weight: 600;
+        }
+
+        .select-placeholder {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .option-content {
+      padding: 6px 10px;
+      gap: 6px;
+
+      &--with-avatar {
+        .option-avatar {
+          width: 28px;
+          height: 28px;
+        }
+      }
+
+      .option-text {
+        .option-label {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 1.3;
+        }
+
+        .option-role {
+          font-size: 10px;
+          color: #6B7280;
+          margin-top: 1px;
+        }
+      }
+    }
+  }
+}
+
+// Option Content Shared Styles
+.option-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #f8f9fa;
+  }
+
+  &--with-avatar {
+    .option-avatar {
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+  }
+
+  &--with-icon {
+    .option-icon {
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+  }
+
+  &--multiple {
+    .option-checkbox {
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+  }
+
+  .option-text {
+    flex: 1;
+    min-width: 0; // Allow text to shrink
+  }
+
+  .option-label {
+    font-weight: 500;
+    color: #374151;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .option-role {
+    color: #6B7280;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Deep styling for the underlying select component
+::ng-deep {
+  .test-select {
+    .select-dropdown {
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      background: white;
+      overflow-y: auto;
+      z-index: 1000;
+
+      .select-option {
+        border: none;
+        padding: 0;
+        
+        &:hover {
+          background-color: #f9fafb;
+        }
+
+        &.selected {
+          background-color: #eff6ff;
+          
+          .option-content {
+            background-color: transparent;
+          }
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #f3f4f6;
+        }
+      }
+    }
+
+    .select-trigger {
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+      background: white;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: #9ca3af;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      }
+
+      &.disabled {
+        background-color: #f9fafb;
+        border-color: #e5e7eb;
+        cursor: not-allowed;
+      }
+    }
+
+    .select-label {
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    .error-message {
+      color: #ef4444;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .test-select-wrapper {
+    &[data-variant="large"],
+    &[data-variant="medium"],
+    &[data-variant="small"],
+    &[data-variant="extra-small"] {
+      .test-select {
+        min-width: 100%;
+
+        ::ng-deep ava-select {
+          .select-dropdown {
+            width: 100%;
+            min-width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  .test-select-demo-page {
+    .variant-box {
+      margin-bottom: 15px;
+    }
+
+    .form-actions {
+      flex-direction: column;
+      gap: 8px;
+
+      ava-button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Animation improvements
+.option-content {
+  transition: background-color 0.15s ease, transform 0.15s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Focus indicators
+.test-select-wrapper {
+  &:focus-within {
+    ::ng-deep .test-select .select-trigger {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+  }
+}
+
+// Loading state (if needed in the future)
+.test-select-wrapper {
+  &.loading {
+    ::ng-deep .test-select .select-trigger {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+  }
+}
