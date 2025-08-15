@@ -1,245 +1,49 @@
-// Import styles from the existing app-select component
-@import './app-select.component.scss';
-
-// Test Select Component Styles
-.test-select-demo-page {
+// Test Select Component Styles - Size-based approach like search-bar
+.t-container {
   padding: 20px;
   background-color: #f5f5f5;
   min-height: 100vh;
 
-  .demo-header {
+  .each {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     margin-bottom: 40px;
-    padding: 40px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
 
-  .keyboard-instructions {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 20px;
+    > div {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-    ul {
-      margin: 8px 0 0 0;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 4px;
-    }
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -15px;
-  }
-
-  .col-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 15px;
-  }
-
-  .col-md-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
-    padding: 15px;
-
-    @media (max-width: 768px) {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
-  }
-
-  .col-md-4 {
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-    padding: 15px;
-
-    @media (max-width: 768px) {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
-  }
-
-  .col-md-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 15px;
-
-    @media (max-width: 768px) {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
-  }
-
-  .box {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    color: black;
-
-    h1, h2, h3, h4 {
-      margin: 0 0 15px 0;
-      color: #333;
-      font-weight: 600;
-    }
-
-    h1 { font-size: 24px; }
-    h2 { font-size: 20px; }
-    h3 { font-size: 18px; }
-    h4 { font-size: 16px; }
-
-    p {
-      margin: 0 0 20px 0;
-      color: #666;
-      line-height: 1.5;
-      font-size: 14px;
-    }
-
-    pre {
-      background: #f8f9fa;
-      padding: 15px;
-      border-radius: 4px;
-      border: 1px solid #e9ecef;
-      font-size: 12px;
-      overflow-x: auto;
-      margin: 10px 0;
-      color: black;
-    }
-
-    .mt-2 { margin-top: 0.5rem; }
-    .mt-3 { margin-top: 1rem; }
-
-    strong {
-      color: #333;
-      font-weight: 600;
-    }
-  }
-
-  .variants-container {
-    margin-bottom: 40px;
-  }
-
-  .variant-box {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    height: auto;
-
-    h3 {
-      margin: 0 0 10px 0;
-      color: #333;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    p {
-      margin: 0 0 15px 0;
-      color: #666;
-      font-size: 12px;
-    }
-
-    .controls {
-      background: #f8f9fa;
-      padding: 12px;
-      border-radius: 6px;
-      border: 1px solid #e9ecef;
-
-      h4 {
-        margin: 0 0 10px 0;
-        font-size: 14px;
+      h3 {
+        margin: 0 0 20px 0;
+        color: #333;
+        font-size: 18px;
+        font-weight: 600;
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 10px;
       }
 
-      label {
+      ava-test-select {
         display: block;
-        margin-bottom: 8px;
-        font-size: 12px;
-        cursor: pointer;
+        margin-bottom: 15px;
 
-        input[type="checkbox"] {
-          margin-right: 8px;
+        &:last-child {
+          margin-bottom: 0;
         }
       }
     }
-  }
-
-  .demo-section {
-    margin-bottom: 40px;
-  }
-
-  .form-actions {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-
-    ava-button {
-      flex-shrink: 0;
-    }
-  }
-
-  .config-builder {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #e9ecef;
-
-    .form-group {
-      margin-bottom: 15px;
-
-      label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: 500;
-        font-size: 14px;
-      }
-
-      select.form-control {
-        width: 100%;
-        padding: 8px 12px;
-        border: 1px solid #ced4da;
-        border-radius: 4px;
-        font-size: 14px;
-      }
-
-      input[type="checkbox"] {
-        margin-right: 8px;
-      }
-    }
-  }
-
-  .code-preview {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 4px;
-    padding: 15px;
-    font-size: 11px;
-    overflow-x: auto;
-    color: black;
-    max-height: 300px;
-    overflow-y: auto;
   }
 }
 
 // Test Select Component Core Styles
 .test-select-wrapper {
   position: relative;
+  width: 100%;
 
-  // Large Variant - Width: 280px, Height: 364px
-  &[data-variant="large"] {
+  // XL Size - Equivalent to large (280px width, 364px height)
+  &[data-size="xl"] {
     .test-select {
       min-width: 280px;
 
@@ -248,21 +52,17 @@
           width: 280px;
           max-height: 364px;
           min-width: 208px;
-          gap: 4px;
         }
 
         .select-trigger {
           min-height: 48px;
           padding: 12px 16px;
+          font-size: 16px;
         }
 
         .select-label {
           font-size: 16px;
           font-weight: 600;
-        }
-
-        .select-placeholder {
-          font-size: 15px;
         }
       }
     }
@@ -271,11 +71,9 @@
       padding: 12px 16px;
       gap: 12px;
 
-      &--with-avatar {
-        .option-avatar {
-          width: 40px;
-          height: 40px;
-        }
+      .option-avatar {
+        width: 40px;
+        height: 40px;
       }
 
       .option-text {
@@ -294,8 +92,8 @@
     }
   }
 
-  // Medium Variant - Width: 233px, Height: 340px
-  &[data-variant="medium"] {
+  // LG Size - Equivalent to medium (233px width, 340px height)
+  &[data-size="lg"] {
     .test-select {
       min-width: 233px;
 
@@ -304,21 +102,17 @@
           width: 233px;
           max-height: 340px;
           min-width: 208px;
-          gap: 4px;
         }
 
         .select-trigger {
           min-height: 44px;
           padding: 10px 14px;
+          font-size: 15px;
         }
 
         .select-label {
           font-size: 15px;
           font-weight: 600;
-        }
-
-        .select-placeholder {
-          font-size: 14px;
         }
       }
     }
@@ -327,11 +121,9 @@
       padding: 10px 14px;
       gap: 10px;
 
-      &--with-avatar {
-        .option-avatar {
-          width: 36px;
-          height: 36px;
-        }
+      .option-avatar {
+        width: 36px;
+        height: 36px;
       }
 
       .option-text {
@@ -350,8 +142,8 @@
     }
   }
 
-  // Small Variant - Width: 233px, Height: 316px
-  &[data-variant="small"] {
+  // MD Size - Equivalent to small (233px width, 316px height)
+  &[data-size="md"] {
     .test-select {
       min-width: 233px;
 
@@ -360,21 +152,17 @@
           width: 233px;
           max-height: 316px;
           min-width: 208px;
-          gap: 4px;
         }
 
         .select-trigger {
           min-height: 40px;
           padding: 8px 12px;
+          font-size: 14px;
         }
 
         .select-label {
           font-size: 14px;
           font-weight: 600;
-        }
-
-        .select-placeholder {
-          font-size: 13px;
         }
       }
     }
@@ -383,11 +171,9 @@
       padding: 8px 12px;
       gap: 8px;
 
-      &--with-avatar {
-        .option-avatar {
-          width: 32px;
-          height: 32px;
-        }
+      .option-avatar {
+        width: 32px;
+        height: 32px;
       }
 
       .option-text {
@@ -406,31 +192,27 @@
     }
   }
 
-  // Extra Small Variant - Width: 233px, Height: 264px
-  &[data-variant="extra-small"] {
+  // SM Size - Small variant
+  &[data-size="sm"] {
     .test-select {
-      min-width: 233px;
+      min-width: 200px;
 
       ::ng-deep ava-select {
         .select-dropdown {
-          width: 233px;
-          max-height: 264px;
-          min-width: 208px;
-          gap: 4px;
+          width: 200px;
+          max-height: 280px;
+          min-width: 180px;
         }
 
         .select-trigger {
           min-height: 36px;
           padding: 6px 10px;
+          font-size: 13px;
         }
 
         .select-label {
           font-size: 13px;
           font-weight: 600;
-        }
-
-        .select-placeholder {
-          font-size: 12px;
         }
       }
     }
@@ -439,11 +221,9 @@
       padding: 6px 10px;
       gap: 6px;
 
-      &--with-avatar {
-        .option-avatar {
-          width: 28px;
-          height: 28px;
-        }
+      .option-avatar {
+        width: 28px;
+        height: 28px;
       }
 
       .option-text {
@@ -461,6 +241,90 @@
       }
     }
   }
+
+  // XS Size - Equivalent to extra-small (233px width, 264px height)
+  &[data-size="xs"] {
+    .test-select {
+      min-width: 180px;
+
+      ::ng-deep ava-select {
+        .select-dropdown {
+          width: 180px;
+          max-height: 264px;
+          min-width: 160px;
+        }
+
+        .select-trigger {
+          min-height: 32px;
+          padding: 4px 8px;
+          font-size: 12px;
+        }
+
+        .select-label {
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .option-content {
+      padding: 4px 8px;
+      gap: 4px;
+
+      .option-avatar {
+        width: 24px;
+        height: 24px;
+      }
+
+      .option-text {
+        .option-label {
+          font-size: 11px;
+          font-weight: 500;
+          line-height: 1.2;
+        }
+
+        .option-role {
+          font-size: 9px;
+          color: #6B7280;
+          margin-top: 1px;
+        }
+      }
+    }
+  }
+
+  // Primary variant styling
+  &[data-variant="primary"] {
+    ::ng-deep .test-select {
+      .select-trigger {
+        background: #3b82f6;
+        border-color: #3b82f6;
+        color: white;
+
+        &:hover {
+          background: #2563eb;
+          border-color: #2563eb;
+        }
+
+        &:focus {
+          background: #1d4ed8;
+          border-color: #1d4ed8;
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+
+        .select-label {
+          color: white;
+        }
+
+        .select-placeholder {
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+
+      .select-dropdown {
+        border-color: #3b82f6;
+      }
+    }
+  }
 }
 
 // Option Content Shared Styles
@@ -474,18 +338,14 @@
     background-color: #f8f9fa;
   }
 
-  &--with-avatar {
-    .option-avatar {
-      flex-shrink: 0;
-      margin-right: 8px;
-    }
+  .option-avatar {
+    flex-shrink: 0;
+    margin-right: 8px;
   }
 
-  &--with-icon {
-    .option-icon {
-      flex-shrink: 0;
-      margin-right: 8px;
-    }
+  .option-icon {
+    flex-shrink: 0;
+    margin-right: 8px;
   }
 
   &--multiple {
@@ -526,6 +386,7 @@
       background: white;
       overflow-y: auto;
       z-index: 1000;
+      gap: 4px;
 
       .select-option {
         border: none;
@@ -569,12 +430,17 @@
         background-color: #f9fafb;
         border-color: #e5e7eb;
         cursor: not-allowed;
+        opacity: 0.6;
       }
     }
 
     .select-label {
       color: #374151;
       margin-bottom: 6px;
+    }
+
+    .select-placeholder {
+      color: #9ca3af;
     }
 
     .error-message {
@@ -587,11 +453,19 @@
 
 // Responsive Design
 @media (max-width: 768px) {
+  .t-container {
+    .each {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
   .test-select-wrapper {
-    &[data-variant="large"],
-    &[data-variant="medium"],
-    &[data-variant="small"],
-    &[data-variant="extra-small"] {
+    &[data-size="xl"],
+    &[data-size="lg"],
+    &[data-size="md"],
+    &[data-size="sm"],
+    &[data-size="xs"] {
       .test-select {
         min-width: 100%;
 
@@ -601,21 +475,6 @@
             min-width: 200px;
           }
         }
-      }
-    }
-  }
-
-  .test-select-demo-page {
-    .variant-box {
-      margin-bottom: 15px;
-    }
-
-    .form-actions {
-      flex-direction: column;
-      gap: 8px;
-
-      ava-button {
-        width: 100%;
       }
     }
   }

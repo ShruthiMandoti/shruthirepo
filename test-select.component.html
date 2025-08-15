@@ -1,343 +1,63 @@
-<div class="test-select-demo-page">
-    <!-- Header -->
-    <div class="demo-header" style="background: #fff;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="box container">
-                        <h1>Test Select Component - All Variants</h1>
-                        <p>Reusable select component with avatars integration and dynamic features</p>
-                        <div class="keyboard-instructions">
-                            <strong>Features:</strong>
-                            <ul>
-                                <li>4 size variants: Large, Medium, Small, Extra Small</li>
-                                <li>Dynamic avatar display (can be enabled/disabled)</li>
-                                <li>Configurable icons and badges</li>
-                                <li>Flexible width and height settings</li>
-                                <li>All properties are configurable</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="t-container">
+    <div class="each">
+        <!-- Default/Standard Variant -->
+        <div>
+            <h3>Standard Select</h3>
+            <ava-test-select size="xl" [options]="sampleOptions" [(ngModel)]="selectedValues.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="lg" [options]="sampleOptions" [(ngModel)]="selectedValues.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="md" [options]="sampleOptions" [(ngModel)]="selectedValues.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="sm" [options]="sampleOptions" [(ngModel)]="selectedValues.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="xs" [options]="sampleOptions" [(ngModel)]="selectedValues.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
         </div>
-    </div>
 
-    <!-- Variants Demo -->
-    <div class="variants-container">
-        <div class="container">
-            <div class="row">
-                <!-- Large Variant -->
-                <div class="col-12 col-md-3">
-                    <div class="variant-box">
-                        <h3>Large Variant</h3>
-                        <p>Width: 280px, Height: 364px</p>
-                        <ava-test-select
-                            variant="large"
-                            label="Select User"
-                            placeholder="Select a user"
-                            [showAvatar]="largeConfig.showAvatar"
-                            [showIcon]="largeConfig.showIcon"
-                            [showBadge]="largeConfig.showBadge"
-                            [options]="largeConfig.options"
-                            [(ngModel)]="selectedValues.large">
-                        </ava-test-select>
-
-                        <!-- Controls for Large -->
-                        <div class="controls mt-3">
-                            <h4>Configuration:</h4>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="largeConfig.showAvatar"> Show Avatar
-                            </label>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="largeConfig.showIcon"> Show Icon
-                            </label>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="largeConfig.showBadge"> Show Badge
-                            </label>
-                        </div>
-                        <div class="mt-2">
-                            <strong>Selected:</strong> {{selectedValues.large}}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Medium Variant -->
-                <div class="col-12 col-md-3">
-                    <div class="variant-box">
-                        <h3>Medium Variant</h3>
-                        <p>Width: 233px, Height: 340px</p>
-                        <ava-test-select
-                            variant="medium"
-                            label="Select Team Member"
-                            placeholder="Select member"
-                            [showAvatar]="mediumConfig.showAvatar"
-                            [showIcon]="mediumConfig.showIcon"
-                            [showBadge]="mediumConfig.showBadge"
-                            [options]="mediumConfig.options"
-                            [(ngModel)]="selectedValues.medium">
-                        </ava-test-select>
-
-                        <!-- Controls for Medium -->
-                        <div class="controls mt-3">
-                            <h4>Configuration:</h4>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="mediumConfig.showAvatar"> Show Avatar
-                            </label>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="mediumConfig.showIcon"> Show Icon
-                            </label>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="mediumConfig.showBadge"> Show Badge
-                            </label>
-                        </div>
-                        <div class="mt-2">
-                            <strong>Selected:</strong> {{selectedValues.medium}}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Small Variant -->
-                <div class="col-12 col-md-3">
-                    <div class="variant-box">
-                        <h3>Small Variant</h3>
-                        <p>Width: 233px, Height: 316px</p>
-                        <ava-test-select
-                            variant="small"
-                            label="Select Status"
-                            placeholder="Select status"
-                            [showAvatar]="smallConfig.showAvatar"
-                            [showIcon]="smallConfig.showIcon"
-                            [showBadge]="smallConfig.showBadge"
-                            [options]="smallConfig.options"
-                            [(ngModel)]="selectedValues.small">
-                        </ava-test-select>
-
-                        <!-- Controls for Small -->
-                        <div class="controls mt-3">
-                            <h4>Configuration:</h4>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="smallConfig.showAvatar"> Show Avatar
-                            </label>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="smallConfig.showIcon"> Show Icon
-                            </label>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="smallConfig.showBadge"> Show Badge
-                            </label>
-                        </div>
-                        <div class="mt-2">
-                            <strong>Selected:</strong> {{selectedValues.small}}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Extra Small Variant -->
-                <div class="col-12 col-md-3">
-                    <div class="variant-box">
-                        <h3>Extra Small Variant</h3>
-                        <p>Width: 233px, Height: 264px</p>
-                        <ava-test-select
-                            variant="extra-small"
-                            label="Select Priority"
-                            placeholder="Select priority"
-                            [showAvatar]="extraSmallConfig.showAvatar"
-                            [showIcon]="extraSmallConfig.showIcon"
-                            [showBadge]="extraSmallConfig.showBadge"
-                            [options]="extraSmallConfig.options"
-                            [(ngModel)]="selectedValues.extraSmall">
-                        </ava-test-select>
-
-                        <!-- Controls for Extra Small -->
-                        <div class="controls mt-3">
-                            <h4>Configuration:</h4>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="extraSmallConfig.showAvatar"> Show Avatar
-                            </label>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="extraSmallConfig.showIcon"> Show Icon
-                            </label>
-                            <label>
-                                <input type="checkbox" [(ngModel)]="extraSmallConfig.showBadge"> Show Badge
-                            </label>
-                        </div>
-                        <div class="mt-2">
-                            <strong>Selected:</strong> {{selectedValues.extraSmall}}
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Primary Variant -->
+        <div>
+            <h3>Primary Select</h3>
+            <ava-test-select variant="primary" size="xl" [options]="sampleOptions" [(ngModel)]="selectedValuesPrimary.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select variant="primary" size="lg" [options]="sampleOptions" [(ngModel)]="selectedValuesPrimary.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select variant="primary" size="md" [options]="sampleOptions" [(ngModel)]="selectedValuesPrimary.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select variant="primary" size="sm" [options]="sampleOptions" [(ngModel)]="selectedValuesPrimary.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select variant="primary" size="xs" [options]="sampleOptions" [(ngModel)]="selectedValuesPrimary.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
         </div>
-    </div>
 
-    <!-- Multiple Selection Demo -->
-    <div class="demo-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="box container">
-                        <h2>Multiple Selection with Different Variants</h2>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ava-test-select
-                                    variant="large"
-                                    label="Multi-Select Users"
-                                    placeholder="Select multiple users"
-                                    [multiple]="true"
-                                    [showAvatar]="true"
-                                    [showIcon]="false"
-                                    [showBadge]="true"
-                                    [options]="multiSelectOptions"
-                                    [(ngModel)]="selectedMultipleValues">
-                                </ava-test-select>
-                            </div>
-                            <div class="col-md-6">
-                                <h4>Selected Values:</h4>
-                                <pre>{{ selectedMultipleValues | json }}</pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Disabled Variant -->
+        <div>
+            <h3>Disabled Select</h3>
+            <ava-test-select [disabled]="true" size="xl" [options]="sampleOptions" [(ngModel)]="selectedValuesDisabled.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [disabled]="true" size="lg" [options]="sampleOptions" [(ngModel)]="selectedValuesDisabled.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [disabled]="true" size="md" [options]="sampleOptions" [(ngModel)]="selectedValuesDisabled.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [disabled]="true" size="sm" [options]="sampleOptions" [(ngModel)]="selectedValuesDisabled.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [disabled]="true" size="xs" [options]="sampleOptions" [(ngModel)]="selectedValuesDisabled.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
         </div>
-    </div>
 
-    <!-- Form Integration Demo -->
-    <div class="demo-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="box container">
-                        <h2>Form Integration with Validation</h2>
-                        <form [formGroup]="testForm" (ngSubmit)="submitForm()">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <ava-test-select
-                                        variant="large"
-                                        label="Required Field"
-                                        placeholder="Select user"
-                                        [required]="true"
-                                        [error]="getFieldError('user')"
-                                        [showAvatar]="true"
-                                        [showIcon]="true"
-                                        [showBadge]="false"
-                                        [options]="formOptions"
-                                        formControlName="user">
-                                    </ava-test-select>
-                                </div>
-                                <div class="col-md-3">
-                                    <ava-test-select
-                                        variant="medium"
-                                        label="Optional Field"
-                                        placeholder="Select status"
-                                        [showAvatar]="false"
-                                        [showIcon]="true"
-                                        [showBadge]="false"
-                                        [options]="statusOptions"
-                                        formControlName="status">
-                                    </ava-test-select>
-                                </div>
-                                <div class="col-md-3">
-                                    <ava-test-select
-                                        variant="small"
-                                        label="Disabled Field"
-                                        placeholder="Disabled"
-                                        [disabled]="true"
-                                        [showAvatar]="true"
-                                        [showIcon]="false"
-                                        [showBadge]="true"
-                                        [options]="priorityOptions"
-                                        formControlName="priority">
-                                    </ava-test-select>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-actions">
-                                        <ava-button variant="primary" label="Submit" type="submit"></ava-button>
-                                        <ava-button variant="secondary" label="Reset" type="button" (click)="resetForm()"></ava-button>
-                                    </div>
-                                    <div class="mt-3">
-                                        <h4>Form Values:</h4>
-                                        <pre>{{ testForm.value | json }}</pre>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <!-- With Icons -->
+        <div>
+            <h3>Select with Icons</h3>
+            <ava-test-select size="xl" [options]="iconOptions" [(ngModel)]="selectedValuesIcon.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="lg" [options]="iconOptions" [(ngModel)]="selectedValuesIcon.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="md" [options]="iconOptions" [(ngModel)]="selectedValuesIcon.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="sm" [options]="iconOptions" [(ngModel)]="selectedValuesIcon.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="xs" [options]="iconOptions" [(ngModel)]="selectedValuesIcon.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
         </div>
-    </div>
 
-    <!-- Custom Configuration Demo -->
-    <div class="demo-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="box container">
-                        <h2>Custom Configuration Builder</h2>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h4>Build Your Select:</h4>
-                                <div class="config-builder">
-                                    <div class="form-group">
-                                        <label>Variant:</label>
-                                        <select [(ngModel)]="customConfig.variant" class="form-control">
-                                            <option value="large">Large</option>
-                                            <option value="medium">Medium</option>
-                                            <option value="small">Small</option>
-                                            <option value="extra-small">Extra Small</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            <input type="checkbox" [(ngModel)]="customConfig.showAvatar"> Show Avatar
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            <input type="checkbox" [(ngModel)]="customConfig.showIcon"> Show Icon
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            <input type="checkbox" [(ngModel)]="customConfig.showBadge"> Show Badge
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            <input type="checkbox" [(ngModel)]="customConfig.multiple"> Multiple Selection
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            <input type="checkbox" [(ngModel)]="customConfig.disabled"> Disabled
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Preview:</h4>
-                                <ava-test-select
-                                    [variant]="customConfig.variant"
-                                    label="Custom Select"
-                                    placeholder="Custom configured select"
-                                    [multiple]="customConfig.multiple"
-                                    [disabled]="customConfig.disabled"
-                                    [showAvatar]="customConfig.showAvatar"
-                                    [showIcon]="customConfig.showIcon"
-                                    [showBadge]="customConfig.showBadge"
-                                    [options]="customOptions"
-                                    [(ngModel)]="customSelectedValue">
-                                </ava-test-select>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Generated Code:</h4>
-                                <pre class="code-preview">{{ getGeneratedCode() }}</pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- With Avatars -->
+        <div>
+            <h3>Select with Avatars</h3>
+            <ava-test-select size="xl" [options]="avatarOptions" [(ngModel)]="selectedValuesAvatar.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="lg" [options]="avatarOptions" [(ngModel)]="selectedValuesAvatar.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="md" [options]="avatarOptions" [(ngModel)]="selectedValuesAvatar.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="sm" [options]="avatarOptions" [(ngModel)]="selectedValuesAvatar.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="xs" [options]="avatarOptions" [(ngModel)]="selectedValuesAvatar.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
+        </div>
+
+        <!-- Multiple Selection -->
+        <div>
+            <h3>Multiple Selection</h3>
+            <ava-test-select [multiple]="true" size="xl" [options]="sampleOptions" [(ngModel)]="selectedValuesMultiple.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [multiple]="true" size="lg" [options]="sampleOptions" [(ngModel)]="selectedValuesMultiple.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [multiple]="true" size="md" [options]="sampleOptions" [(ngModel)]="selectedValuesMultiple.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [multiple]="true" size="sm" [options]="sampleOptions" [(ngModel)]="selectedValuesMultiple.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [multiple]="true" size="xs" [options]="sampleOptions" [(ngModel)]="selectedValuesMultiple.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
         </div>
     </div>
 </div>
