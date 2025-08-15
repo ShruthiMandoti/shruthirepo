@@ -1,0 +1,63 @@
+<div class="t-container">
+    <div class="each">
+        <!-- Default/Standard Variant -->
+        <div>
+            <h3>Standard Select</h3>
+            <ava-test-select size="xl" [options]="sampleOptions" [(ngModel)]="selectedValues.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="lg" [options]="sampleOptions" [(ngModel)]="selectedValues.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="md" [options]="sampleOptions" [(ngModel)]="selectedValues.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="sm" [options]="sampleOptions" [(ngModel)]="selectedValues.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="xs" [options]="sampleOptions" [(ngModel)]="selectedValues.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
+        </div>
+
+        <!-- Primary Variant -->
+        <div>
+            <h3>Primary Select</h3>
+            <ava-test-select variant="primary" size="xl" [options]="sampleOptions" [(ngModel)]="selectedValuesPrimary.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select variant="primary" size="lg" [options]="sampleOptions" [(ngModel)]="selectedValuesPrimary.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select variant="primary" size="md" [options]="sampleOptions" [(ngModel)]="selectedValuesPrimary.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select variant="primary" size="sm" [options]="sampleOptions" [(ngModel)]="selectedValuesPrimary.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select variant="primary" size="xs" [options]="sampleOptions" [(ngModel)]="selectedValuesPrimary.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
+        </div>
+
+        <!-- Disabled Variant -->
+        <div>
+            <h3>Disabled Select</h3>
+            <ava-test-select [disabled]="true" size="xl" [options]="sampleOptions" [(ngModel)]="selectedValuesDisabled.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [disabled]="true" size="lg" [options]="sampleOptions" [(ngModel)]="selectedValuesDisabled.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [disabled]="true" size="md" [options]="sampleOptions" [(ngModel)]="selectedValuesDisabled.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [disabled]="true" size="sm" [options]="sampleOptions" [(ngModel)]="selectedValuesDisabled.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [disabled]="true" size="xs" [options]="sampleOptions" [(ngModel)]="selectedValuesDisabled.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
+        </div>
+
+        <!-- With Icons -->
+        <div>
+            <h3>Select with Icons</h3>
+            <ava-test-select size="xl" [options]="iconOptions" [(ngModel)]="selectedValuesIcon.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="lg" [options]="iconOptions" [(ngModel)]="selectedValuesIcon.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="md" [options]="iconOptions" [(ngModel)]="selectedValuesIcon.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="sm" [options]="iconOptions" [(ngModel)]="selectedValuesIcon.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="xs" [options]="iconOptions" [(ngModel)]="selectedValuesIcon.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
+        </div>
+
+        <!-- With Avatars -->
+        <div>
+            <h3>Select with Avatars</h3>
+            <ava-test-select size="xl" [options]="avatarOptions" [(ngModel)]="selectedValuesAvatar.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="lg" [options]="avatarOptions" [(ngModel)]="selectedValuesAvatar.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="md" [options]="avatarOptions" [(ngModel)]="selectedValuesAvatar.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="sm" [options]="avatarOptions" [(ngModel)]="selectedValuesAvatar.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select size="xs" [options]="avatarOptions" [(ngModel)]="selectedValuesAvatar.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
+        </div>
+
+        <!-- Multiple Selection -->
+        <div>
+            <h3>Multiple Selection</h3>
+            <ava-test-select [multiple]="true" size="xl" [options]="sampleOptions" [(ngModel)]="selectedValuesMultiple.xl" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [multiple]="true" size="lg" [options]="sampleOptions" [(ngModel)]="selectedValuesMultiple.lg" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [multiple]="true" size="md" [options]="sampleOptions" [(ngModel)]="selectedValuesMultiple.md" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [multiple]="true" size="sm" [options]="sampleOptions" [(ngModel)]="selectedValuesMultiple.sm" (selectionChange)="handleSelection($event)"></ava-test-select>
+            <ava-test-select [multiple]="true" size="xs" [options]="sampleOptions" [(ngModel)]="selectedValuesMultiple.xs" (selectionChange)="handleSelection($event)"></ava-test-select>
+        </div>
+    </div>
+</div>
